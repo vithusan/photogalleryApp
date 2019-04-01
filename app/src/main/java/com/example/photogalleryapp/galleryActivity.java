@@ -62,52 +62,6 @@ public class galleryActivity extends AppCompatActivity {
     }
 
 
-/**
-    class GridAdapter extends BaseAdapter{
-        private ArrayList<String> photoGallery;
-        private Context context;
-
-        public ArrayList<String> populateGallery() {
-            File file = new File(Environment.getExternalStorageDirectory()
-                    .getAbsolutePath(), "/Android/data/com.example.photogalleryapp/files/Pictures");
-            photoGallery = new ArrayList<String>();
-            File[] fList = file.listFiles();
-            if (fList != null) {
-                for (File f : file.listFiles()) {
-                    photoGallery.add(f.getPath());
-                }
-            }
-            return photoGallery;
-        }
-
-        public GridAdapter (Context c){
-            context = c;
-        }
-        @Override
-        public int getCount() {
-            return photoGallery.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return photoGallery.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView iv = new ImageView (context);
-            //iv.setImageResource(populateGallery()[position]);
-
-            return null;
-        }
-    }
-**/
-
     private View.OnClickListener homeListener = new View.OnClickListener() {
         public void onClick(View v) {
             Intent i = new Intent(galleryActivity.this, MainActivity.class);
