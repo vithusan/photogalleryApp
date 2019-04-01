@@ -42,7 +42,6 @@ public class galleryActivity extends AppCompatActivity {
         ghomebtn.setOnClickListener(homeListener);
         gcamerabtn.setOnClickListener(cameraListener);
 
-
         //GridView gridView = (GridView) findViewById(R.id.galleryView);
         //gridView.setAdapter(new GridAdapter());
 
@@ -51,7 +50,6 @@ public class galleryActivity extends AppCompatActivity {
         File PictureDir = new File (Environment.getExternalStorageDirectory()
                 .getAbsolutePath(), "/Android/data/com.example.photogalleryapp/files/Pictures");
 
-        //File PictureDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         String picpath = PictureDir.getPath();
         
         Uri data = Uri.parse(picpath);
