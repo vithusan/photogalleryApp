@@ -142,8 +142,23 @@ public class homepage extends AppCompatActivity implements View.OnClickListener{
 
     private View.OnClickListener galleryListener = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent i = new Intent(homepage.this, galleryActivity.class);
-            startActivityForResult(i, SEARCH_ACTIVITY_REQUEST_CODE);
+            //Intent i = new Intent(homepage.this, galleryActivity.class);
+            //startActivityForResult(i, SEARCH_ACTIVITY_REQUEST_CODE);
+            //Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            //startActivityForResult(intent, 2);
+
+            Intent photoPicker = new Intent(Intent.ACTION_GET_CONTENT);
+
+            File PictureDir = new File (Environment.getExternalStorageDirectory()
+                    .getAbsolutePath(), "/Android/data/com.example.photogalleryapp/files/Pictures");
+
+            String picpath = PictureDir.getPath();
+
+            Uri data = Uri.parse(picpath);
+
+            photoPicker.setDataAndType(data, "image/*");
+
+            startActivityForResult(photoPicker, 20);
         }
     };
 
