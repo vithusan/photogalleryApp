@@ -91,8 +91,11 @@ public class homepage extends AppCompatActivity implements View.OnClickListener{
 
 
     private ArrayList<String> populateGallery(Date minDate, Date maxDate) {
-        File file = new File(Environment.getExternalStorageDirectory()
-                .getAbsolutePath(), "/Android/data/com.example.photogalleryapp/files/Pictures");
+        File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+
+
+        //File file = new File(Environment.getExternalStorageDirectory()
+                //.getAbsolutePath(), "/Android/data/com.example.photogalleryapp/files/Pictures");
         photoGallery = new ArrayList<String>();
         File[] fList = file.listFiles();
         if (fList != null) {
